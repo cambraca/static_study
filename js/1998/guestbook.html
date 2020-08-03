@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>1998 validation</title>
+</head>
+<body background="Blue261.gif" bgcolor="black">
+
+<center><font color="yellow">
+
+<h1>Sign my guestbook <img src="gif-3.gif"></h1>
+
+<p>Enter your information below to sign my guestbook!</p>
+
+<form action="guestbook.cgi" onsubmit="return validate(this)">
+  <label>Name:<br><input type="text" name="name" size="60"></label><br>
+  <label>Email:<br><input type="text" name="name" size="60"></label><br>
+  <label>Message:<br><textarea name="message" rows="6" cols="60"></textarea>
+  <br><br>
+  <input type="submit" value="SUBMIT!">
+</form>
+
+</font></center>
+
+<script>
+  function validateName(field) {
+    if (/\w +\w/.test(field.value))
+      return true;
+    alert("Please enter your full name");
+    return false;
+  }
+
+  function validateEmail(field) {
+    re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(field.value))
+      return true;
+    alert("Please enter a valid email address");
+    return false;
+  }
+
+  function validateMessage(field) {
+    if (/[^\s]+/.test(field.value))
+      return true;
+    alert("Please enter a message");
+    return false;
+  }
+
+  function validate(form) {
+/*    if (!validateName(form.name))
+      return false;
+    if (!validateEmail(form.email))
+      return false;
+    if (!validateMessage(form.message))
+      return false;
+  */    
+    alert("Thank you for signing my guestbook!");
+    return true;
+  }
+
+</script>
+
+</body>
+</html>
