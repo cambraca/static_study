@@ -29,6 +29,8 @@
   }
 
   function validateEmail(field) {
+    // Regular expression from the distant future, 2017:
+    // https://stackoverflow.com/a/46181/368864
     re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(field.value))
       return true;
